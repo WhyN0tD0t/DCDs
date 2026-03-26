@@ -1,0 +1,39 @@
+TO_DO: (recent)
+- try to make the scale factor work, try also to define it as SF or smth
+- draw remaining gates 
+- start working on implementing a fully working NOT_gate (both visually and logically wise)
+  (Logic.h, Render.h)
+  Logic should update in App::update();
+  Render should render in App::draw();
+
+small pick up menu should be introduced in App::drawUI();
+
+RESOLVE the problem of flickering when draw() and drawUI() are called in App::run();
+!!!
+I think its bcuz Begin and EndDrawing are called two times in each funciton... !!!
+
+____________________________________________________________
+/ Poll and handle events (inputs, window resize, etc.)
+        // You can read the io.WantCaptureMouse, io.WantCaptureKeyboard flags to tell if dear imgui wants to use your inputs.
+        // - When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application, or clear/overwrite your copy of the mouse data.
+        // - When io.WantCaptureKeyboard is true, do not dispatch keyboard input data to your main application, or clear/overwrite your copy of the keyboard data.
+        // Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
+        ImGui_ImplRaylib_ProcessEvents();
+____________________________________________________________
+
+plan:
+
+-> introduce visually and logically working Wires
+-> draw components
+-> make components move around while holding a LPM (hold or click would be ok) :)
+-> start designing the GUI 
+-> learn ImGui to introduce a working toolbar
+
+
+IF (enough_time) {
+    - introduce Clock 
+    - make saving possible
+    - make it look pretty
+    - make the custom component, that user may create and reuse
+}
+

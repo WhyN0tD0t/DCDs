@@ -1,0 +1,21 @@
+[
+  {
+    "file": "src/Renderer.cpp",
+    "arguments": [
+      "g++",
+      "-Wall",
+      "-std=c++17",
+      "-I./raylib/include",
+      "-I./raylib/src",
+      "-I./src",
+      "-I./src/external",
+      "-I./src/external/imgui",
+      "-c",
+      "src/Renderer.cpp",
+      "-o",
+      "src/Renderer.o"
+    ],
+    "directory": "/home/whynotdot/DCDs",
+    "output": "src/Renderer.o"
+  }
+]
