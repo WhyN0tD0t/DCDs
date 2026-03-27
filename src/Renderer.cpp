@@ -2,6 +2,8 @@
 #include "imgui.h"
 #include "raylib.h"
 
+#include <math.h>
+
 void Renderer::drawNOTGate(float x, float y, bool outputState) {
 
   // triangle vertices
@@ -72,4 +74,32 @@ void Renderer::drawWire(float x1, float y1, float x2, float y2) {
   // DrawLineEx(ymid, end, 2.0f, COLOR_OF_CMPNTS);
 }
 
-void Renderer::drawGrid(float offset) { DrawGrid(5, offset); }
+void Renderer::drawGrid(Vector2 topLeft, Vector2 bottomRight) {
+  int startX = floor(topLeft.x / cellSize) * cellSize;
+  int startY = floor(topLeft.y / cellSize) * cellSize;
+  int endX = bottomRight.x;
+  int endY = bottomRight.y;
+
+  // Check which monitor the window is currently on
+  int monitor = GetCurrentMonitor();
+
+  // Check if the WM forced the window to be the size of the monitor
+  bool isWmFullscreen = (GetScreenWidth() >= GetMonitorWidth(monitor)) &&
+                        (GetScreenHeight() >= GetMonitorHeight(monitor));
+
+  // Check BOTH Raylib's internal state and the WM's forced state
+  if (IsWindowFullscreen() || isWmFullscreen) {
+    endX = GetScreenWidth();
+    endY = GetScreenHeight();
+    DrawRing((Vector2){0, 0}, 100.0f, 200.0f, 0, 200, 20, RED);
+  }
+
+  // Draw vertical lines
+  for (int x = startX; x <= endX + cellSize; x += cellSize) {
+    DrawLine(x, startY, x, endY + cellSize, COLOR_OF_GRID);
+  }
+  // Draw horizontal lines
+  for (int y = startY; y <= endY + cellSize; y += cellSize) {
+    DrawLine(startX, y, endX + cellSize, y, COLOR_OF_GRID);
+  }
+}

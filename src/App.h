@@ -3,6 +3,7 @@
 
 #include "Logic.h"
 #include "Renderer.h"
+#include "raylib.h"
 #include "rlImGui.h"
 
 class App {
@@ -26,6 +27,7 @@ private:
   int screenHeight = 720;
 
   bool showToolBox = true;
+  Camera2D camera = {0, 0};
 };
 
 #endif

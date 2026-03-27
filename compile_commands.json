@@ -1,6 +1,6 @@
 [
   {
-    "file": "src/Renderer.cpp",
+    "file": "src/App.cpp",
     "arguments": [
       "g++",
       "-Wall",
@@ -11,11 +11,11 @@
       "-I./src/external",
       "-I./src/external/imgui",
       "-c",
-      "src/Renderer.cpp",
+      "src/App.cpp",
       "-o",
-      "src/Renderer.o"
+      "src/App.o"
     ],
     "directory": "/home/whynotdot/DCDs",
-    "output": "src/Renderer.o"
+    "output": "src/App.o"
   }
 ]
