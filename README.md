@@ -4,17 +4,17 @@ DCD Simulator is a fast, interactive logic circuit designer and simulator built 
 
 ## Screenshots
 
-![Screenshot 1: Main Canvas](docs/screenshot1.png)
+![Screenshot 1: Main Canvas](docs/dcds1)
 *Caption: Designing a basic logic circuit.*
 
-![Screenshot 2: Radial Menu](docs/screenshot2.png)
-*Caption: The paged radial menu for fast component selection.*
+![Screenshot 2: Radial Menu](docs/dcds2)
+*Caption: Saving your work (the .dcd files are placed under: /Documents/DCDsimulator.)*
 
-![Screenshot 3: Complex Circuit](docs/screenshot3.png)
-*Caption: A complex circuit in action.*
+![Screenshot 3: Complex Circuit](docs/dcds3)
+*Caption: The paged radial menu for fast tool selection*
 
-![Screenshot 4: Save and Load](docs/screenshot4.png)
-*Caption: The file manager for custom .dcd save files.*
+![Screenshot 4: Save and Load](docs/dcds4)
+*Caption: The paged radial menu for selecting variety of components*
 
 *(Note: Replace the image paths in the docs folder with your actual screenshots)*
 
@@ -22,14 +22,14 @@ DCD Simulator is a fast, interactive logic circuit designer and simulator built 
 
 * **Real-time Simulation:** Physics and logic states are calculated and updated at 60 ticks per second.
 * **Component Library:** Includes standard logic gates (AND, OR, NOT, NAND, NOR) and interactive I/O components (Buttons, Bulbs, Junctions).
-* **Smart Wiring:** Draw wires dynamically. The engine uses a spatial garbage collector to automatically clean up orphaned junctions.
+* **Smart Wiring:** Draw wires dynamically. The engine uses a spatial garbage collector to automatically deal with disconnecting wires upon removal of components.
 * **Paged Radial Menu:** Hold a hotkey to open a fast, split-category radial menu. Scroll the mouse wheel to flip through component pages instantly.
-* **Infinite Canvas:** Pan with the mouse and zoom with the scroll wheel to build circuits of any size.
-* **Custom Save Format:** Save and load your circuits using our proprietary .dcd file format.
+* **Infinite Canvas:** Pan with the mouse(hold right mouse button) and zoom with the scroll wheel to build circuits of any size.
+* **Custom Save Format:** Save and load your circuits using the .dcd file format.
 
 ## How to Build (Linux)
 
-This project uses a "Smart" Makefile. You do not need to manually install dependencies like Raylib or ImGui; the Makefile will automatically download and build them for you.
+This project uses a "Smart" Makefile. You do not need to manually install dependencies like Raylib or ImGui; All You have to do is run the Makefile.
 
 ### Requirements
 * GCC compiler with C++20 module support (g++)
