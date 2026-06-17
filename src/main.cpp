@@ -1,14 +1,9 @@
-#include <iostream>
+// #include <iostream>
 #include <vector>
 
-#include "AND_gate.h"
-#include "Component.h"
-#include "Gate.h"
-#include "NOT_gate.h"
-#include "OR_gate.h"
-#include "Wire.h"
-
 #include "App.h"
+
+import Component;
 
 // FLP FLOPS
 class Flip_flop : public Component {

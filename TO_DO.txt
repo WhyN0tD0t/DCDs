@@ -1,5 +1,135 @@
 TO_DO: (recent)
-- try to make the scale factor work, try also to define it as SF or smth
+
+[+] REGEX
+[+] MODULES
+[+] FILESYSTEM
+[+] ASYNC ComputeComponentes()
+
+----------
+16.06.2026
+----------
+- added proper functions for Circular MenuUpdating and menu drawing inside  App.h
+- the menus are split into Tools/Components { Tab / Space}
+- added a functional NOR gate :)
+
+- change the ImGui UI
+- add light mode :)
+
+
+// DONE // FIX: the NOR gate drawing and pins position, also update the compute function for it.
+
+----------
+15.06.2026
+----------
+- added filesystem and possibility to save and load saved files
+- added a cs GO like circular menu (// FIX: NEED TO WORK ON THIS)
+- deletion of components works better than previously but still leaves a one dangling junction (but removes the visual wires :) )
+-
+
+- add more components: NOR, XOR, XNOR, flip-flop etc.
+- split the circular menu into two: TOOLS / COMPONENTS (TAB / SPACE)
+- change the fixed-to-left ImGui menu so it resizes upon FULL SCREEN
+maybe change the layout as well, make it hideable
+- add the light/dark theme modes.
+- 
+
+------------------------------------------------
+
+----------
+06.06.2026
+----------
+- added max_propagation for the computeCircuit() to make the signal propagation feel smoother and faster
+- added self connecting components to wires if the happen to share location (pin on pin) while placing components.
+- fixed removing components
+- now after removal of component with connections, we can assign new connections, wires now have junctions at ends.
+- fixed the Bulb system (upon removal of component, we pass LOW level signl. because its now dangling in the space, so no possible current)
+
+____________________________________________________________
+----------
+31.05.2026
+----------
+- added modules
+- added async with mutexes for computeCircuit()
+- added simple component on KEY_DELETE removal (removes connections as well)
+
+- FIX: the wires. now its dangling line without a pin (after deletion of component)
+----------------------------------------
+30.05.2026
+------------
+- the junctions, logical connections work
+- Bulbs light up
+- buttons switch states
+- NAND gate added (works -> tested on flip-flop architecture)
+
+- Add more gates (NOR, XOR, XNOR)
+- add a flip-flop, multiplexer?
+- do the mandatory libraries: filesystem, async, modules instead of classes, regex when saving the circuit.
+
+-----------------------------------------
+10.05.2026
+----------
+- Implementing finding individual Pins of an object
+- Wires are now possible to draw only from pins to pins (junction have pins so Wire can be drawn from pin to empty space- there the junction is created)
+- Highlighting a Pin (Renderer::drawPin)
+- Fix snapping to grid ( feels odd)
+- spawn junctions and create LogicalConnections
+- Set the offset for Pins in each Component child class constructor. (there probably is a better way to do that rather than manually for each object, but it works)
+- Add Icons for Tools in ImGui ToolBox bar 
+- Make Move button work (Wire button works right now) And also highlight the current Tool
+-----------------------------------------
+09.05.2026
+----------
+- added drawSelection method in Renderer.h
+  (maybe change it just to draw a component in GREEN? COLOR_OF_SELECTION)
+- implemented a new Wiring system containing Junctions and connection
+  (it needs to be finished)
+- Fix snapping wires to specific pins ( they now have x/y offset)
+- Put Junctions at the end of the connection ending with NULLPTR!!
+- draw Juncitons, make them selectable as well, it probably only needs a hitbox values overwritten
+----------------------------------------
+07.05.2026
+----------
+- added Button and Bulb components
+- they are being drawn correct ( except for the font in button)
+
+- connect logic...
+---------------------------------------
+06.05.2026
+----------
+- added working collisions between objects of Component class
+- added drawing hitboxes function for DEBUGGING
+
+- connect logic... maybe try those nets, or just wires 
+- fix drawing wires, feels odd sometimes...
+
+
+-----------------------------------------
+05.05.2026
+----------
+- corrected drawing gates (or, and, not)
+- introduced hitbox ( needs to be finished) !!! 
+  IT is present for every component object
+- make collisions work, so objects do not overlap
+- ImGui menu is working! :)
+- Finally connect logic with rendering. (the simulator only draws gates now... they do not interact yet...)
+
+-----------------------------------------
+21.04.2026
+__________
+- implemented placing gates (not gate)
+- improved grid matching
+to_do_next:
+-> make placing all the implemented gates possible 
+-> implement ImGui menu for choosing gates
+---------------------------------------------------
+
+
+____________________________________________________________
+make a way to distinguish elements when clicking them
+find a way to make connecting wires together a thing. so they pass
+the signal ( making NETS instead of wires)
+this makes sense but its not going to be easy...
+
 - draw remaining gates 
 - start working on implementing a fully working NOT_gate (both visually and logically wise)
   (Logic.h, Render.h)

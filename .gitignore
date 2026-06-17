@@ -1,0 +1,15 @@
+# Compiled object files
+*.o
+
+# The compiled executables
+dcds
+*.exe
+*.zip
+
+# Auto-downloaded Dependencies (The Makefile handles these!)
+raylib/
+src/external/
+
+# OS / Editor files
+.vscode/
+.DS_Store
